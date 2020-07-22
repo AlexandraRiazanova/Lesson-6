@@ -21,11 +21,16 @@ const newObj = {
     sername: 'Ivanov',
     age: 30,
 };
-var counter = 0;
-for (var key in newObj) {
-    if(typeof newObj[key] == 'string' ){
-        counter++;
+function count(){
+    var counter = 0;
+    var length = 0;
+    for (var key in newObj) {
+        if(typeof newObj[key] == 'string' ){
+            counter++;
+            length += newObj[key].length;
+        }
     }
+    console.log('Количество строковых значений в объекте - ' + counter)
+    console.log('Длина всех строковых значений в объекте - ' + length)
 }
-console.log('Количество строковых значений в объекте - ' + counter)
-
+count();
